@@ -5,11 +5,12 @@ import { useRouter } from 'next/navigation';
 import { Button, Card, CardContent, Modal, ModalHeader, ModalBody, ModalFooter } from '@/components/ui';
 import { Header } from '@/components/layout/Header';
 import { useApp } from '@/contexts/AppContext';
+import { useAuthFromToken } from '@/hooks/useAuth';
 
 export default function ProfilePage() {
   const router = useRouter();
-  const { state, logout } = useApp();
-  const { user, progress } = state;
+  const { logout } = useApp();
+  const { user, progress } = useAuthFromToken();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   const handleLogout = () => {

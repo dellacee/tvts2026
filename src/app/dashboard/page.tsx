@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/contexts/AppContext';
 import Image from 'next/image';
@@ -120,6 +120,10 @@ export default function DashboardPage() {
       bgColor: 'bg-teal-50',
     },
   ];
+
+  useEffect(() => {
+    console.log('User:', user);
+  }, [user]);
 
   return (
     <div className="min-h-screen relative">
