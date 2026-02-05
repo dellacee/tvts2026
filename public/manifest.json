@@ -1,0 +1,17 @@
+{
+  "name": "TVTS Quảng Trị 2026",
+  "short_name": "TVTS QT",
+  "description": "Ngày Hội Tư Vấn Tuyển Sinh - Định Hướng Nghề Nghiệp Quảng Trị 2026",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#E7000B",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
