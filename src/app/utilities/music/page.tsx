@@ -19,7 +19,7 @@ export default function MusicPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header title="Sân khấu âm nhạc" onBack={() => router.push('/locations')} />
+      <Header title="Sân khấu âm nhạc" onBack={() => router.push('/dashboard')} />
       
       <div className="px-4 py-6">
         {/* Banner */}

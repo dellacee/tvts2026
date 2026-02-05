@@ -18,7 +18,7 @@ export default function FoodPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header title="Khu ẩm thực" onBack={() => router.push('/locations')} />
+      <Header title="Khu ẩm thực" onBack={() => router.push('/dashboard')} />
       
       <div className="px-4 py-6">
         {/* Banner */}

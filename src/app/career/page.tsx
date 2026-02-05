@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { Button } from '@/components/ui';
 import { Header } from '@/components/layout/Header';
 
@@ -18,14 +19,16 @@ export default function CareerPage() {
       <Header 
         title="Chọn nghề" 
         onBack={() => router.push('/dashboard')} 
-        className="bg-primary text-white"
+        showLogo
       />
       
       <div className="px-4 py-8">
-        {/* Target Icon */}
+        {/* Logo/Icon */}
         <div className="flex justify-center mb-6">
-          <div className="w-16 h-16 flex items-center justify-center">
-            <span className="text-5xl">🎯</span>
+          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-red-400 flex items-center justify-center shadow-lg">
+            <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
           </div>
         </div>
 
@@ -59,10 +62,17 @@ export default function CareerPage() {
         </div>
 
         {/* Tip */}
-        <div className="mt-6 p-4 bg-yellow-50 rounded-xl border border-yellow-200">
-          <p className="text-sm text-gray-700">
-            <span className="font-medium">💡 Gợi ý:</span> Nếu bạn chưa chắc chắn, hãy làm bài test ONET để khám phá năng lực và sở thích của bản thân!
-          </p>
+        <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-200">
+          <div className="flex items-start gap-3">
+            <div className="w-6 h-6 rounded-full bg-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <p className="text-sm text-gray-700">
+              <span className="font-medium">Gợi ý:</span> Nếu bạn chưa chắc chắn, hãy làm bài test ONET để khám phá năng lực và sở thích của bản thân!
+            </p>
+          </div>
         </div>
       </div>
     </div>

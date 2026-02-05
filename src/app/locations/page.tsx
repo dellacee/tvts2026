@@ -98,7 +98,7 @@ export default function LocationsPage() {
               <LocationCard
                 key={location.id}
                 location={location}
-                onClick={() => router.push(`/locations/${location.id}`)}
+                //onClick={() => router.push(`/locations/${location.id}`)}
               />
             ))}
           </div>

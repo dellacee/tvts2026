@@ -18,7 +18,7 @@ export default function GamesPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header title="Khu trò chơi" onBack={() => router.push('/locations')} />
+      <Header title="Khu trò chơi" onBack={() => router.push('/dashboard')} />
       
       <div className="px-4 py-6">
         {/* Banner */}

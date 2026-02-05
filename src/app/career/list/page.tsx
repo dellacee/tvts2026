@@ -57,12 +57,20 @@ export default function CareerListPage() {
 
           {/* Info boxes */}
           <div className="space-y-2 mb-6">
-            <div className="flex items-center gap-2 text-gray-600">
-              <span>⏱️</span>
+            <div className="flex items-center gap-3 text-gray-600">
+              <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
               <span><strong>Thời gian:</strong> Khoảng 10 phút</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600">
-              <span>📊</span>
+            <div className="flex items-center gap-3 text-gray-600">
+              <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
               <span><strong>Kết quả:</strong> Phân tích tính cách chi tiết</span>
             </div>
           </div>
@@ -101,13 +109,16 @@ export default function CareerListPage() {
       <Header 
         title="Chọn nghề yêu thích" 
         onBack={() => router.push('/career')} 
+        showLogo
       />
       
       <div className="px-4 py-6">
         {/* Icon */}
         <div className="flex justify-center mb-4">
-          <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center">
-            <span className="text-3xl">📋</span>
+          <div className="w-16 h-16 bg-gradient-to-br from-primary to-red-400 rounded-2xl flex items-center justify-center shadow-md">
+            <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
           </div>
         </div>
 
@@ -119,8 +130,11 @@ export default function CareerListPage() {
 
         {/* Dropdown Select Field */}
         <div className="mb-4">
-          <label className="flex items-center gap-1 text-sm text-gray-600 mb-2">
-            🔍 Chọn lĩnh vực từ danh sách
+          <label className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            Chọn lĩnh vực từ danh sách
           </label>
           <select
             value={selectedField}
@@ -138,8 +152,11 @@ export default function CareerListPage() {
 
         {/* Custom career input */}
         <div className="mb-6">
-          <label className="flex items-center gap-1 text-sm text-gray-600 mb-2">
-            ✏️ Nhập tên nghề bạn yêu thích
+          <label className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            </svg>
+            Nhập tên nghề bạn yêu thích
           </label>
           <input
             type="text"
