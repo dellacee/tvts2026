@@ -7,7 +7,7 @@ interface CardProps {
   className?: string;
   onClick?: () => void;
   padding?: 'none' | 'sm' | 'md' | 'lg';
-  variant?: 'default' | 'outline' | 'elevated';
+  variant?: 'default' | 'outline' | 'elevated' | 'warm';
 }
 
 export function Card({
@@ -25,18 +25,19 @@ export function Card({
   };
 
   const variants = {
-    default: 'bg-white shadow-card border border-gray-100',
-    outline: 'bg-white border border-gray-200',
-    elevated: 'bg-white shadow-modal',
+    default: 'bg-background-primary shadow-card border border-neutral-100',
+    outline: 'bg-background-primary border border-neutral-300',
+    elevated: 'bg-background-primary shadow-lg',
+    warm: 'bg-background-secondary border border-accent-lighter border-l-4 border-l-accent',
   };
 
   return (
     <div
       className={`
-        rounded-xl overflow-hidden
+        rounded-lg overflow-hidden transition-all duration-base
         ${paddings[padding]}
         ${variants[variant]}
-        ${onClick ? 'cursor-pointer hover:shadow-md transition-shadow' : ''}
+        ${onClick ? 'cursor-pointer hover:shadow-lg hover:-translate-y-1' : ''}
         ${className}
       `}
       onClick={onClick}

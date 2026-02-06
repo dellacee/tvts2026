@@ -1,11 +1,154 @@
 @import "tailwindcss";
 
+/* Tailwind CSS v4 Theme Configuration */
+@theme {
+  /* Primary Red - Main color from logo */
+  --color-primary: #D32F2F;
+  --color-primary-light: #EF5350;
+  --color-primary-lighter: #FFEBEE;
+  --color-primary-dark: #C62828;
+
+  /* Warm Orange - Accent color */
+  --color-accent: #FF6F00;
+  --color-accent-light: #FFA726;
+  --color-accent-lighter: #FFF3E0;
+  --color-accent-dark: #E65100;
+
+  /* Neutrals */
+  --color-neutral-900: #212121;
+  --color-neutral-700: #424242;
+  --color-neutral-500: #757575;
+  --color-neutral-300: #E0E0E0;
+  --color-neutral-200: #EEEEEE;
+  --color-neutral-100: #F5F5F5;
+  --color-neutral-50: #FAFAFA;
+
+  /* Semantic Colors */
+  --color-success: #388E3C;
+  --color-success-light: #E8F5E9;
+  --color-warning: #FFA726;
+  --color-warning-light: #FFF3E0;
+  --color-error: #EF5350;
+  --color-error-light: #FFEBEE;
+  --color-info: #42A5F5;
+  --color-info-light: #E3F2FD;
+
+  /* Background colors */
+  --color-background-primary: #FFFFFF;
+  --color-background-secondary: #FFFAF6;
+  --color-background-tertiary: #FFF8F5;
+
+  /* Shadows */
+  --shadow-card: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  --shadow-warm: 0 4px 12px 0 rgba(211, 47, 47, 0.15);
+
+  /* Transition Duration */
+  --duration-base: 250ms;
+
+  /* Font Families */
+  --font-sans: 'Be Vietnam Pro', 'Inter', system-ui, sans-serif;
+  --font-heading: 'Montserrat', 'Poppins', sans-serif;
+}
+
+/* First Flight Design System - Quang Tri Education Consulting */
 :root {
-  --primary: #E7000B;
-  --primary-light: #FFE2E2;
-  --secondary: #00C950;
-  --background: #ffffff;
-  --foreground: #1E2939;
+  /* Primary Red - Main color from logo */
+  --primary: #D32F2F;
+  --primary-light: #EF5350;
+  --primary-lighter: #FFEBEE;
+  --primary-dark: #C62828;
+
+  /* Warm Orange - Secondary color harmonious with red */
+  --accent: #FF6F00;
+  --accent-light: #FFA726;
+  --accent-lighter: #FFF3E0;
+  --accent-dark: #E65100;
+
+  /* Neutrals - Gray and natural beige */
+  --neutral-900: #212121;
+  --neutral-700: #424242;
+  --neutral-500: #757575;
+  --neutral-300: #E0E0E0;
+  --neutral-100: #F5F5F5;
+  --neutral-50: #FAFAFA;
+
+  /* Light Backgrounds - Warm white tones */
+  --background-primary: #FFFFFF;
+  --background-secondary: #FFFAF6;
+  --background-tertiary: #FFF8F5;
+
+  /* Semantic Colors */
+  --success: #66BB6A;
+  --success-light: #E8F5E9;
+  --warning: #FFA726;
+  --warning-light: #FFF3E0;
+  --error: #EF5350;
+  --error-light: #FFEBEE;
+  --info: #42A5F5;
+  --info-light: #E3F2FD;
+
+  /* Typography */
+  --font-primary: 'Be Vietnam Pro', 'Inter', -apple-system, sans-serif;
+  --font-heading: 'Montserrat', 'Poppins', sans-serif;
+  --font-number: 'Roboto', sans-serif;
+
+  /* Font Sizes */
+  --text-hero: 3.5rem;
+  --text-h1: 3rem;
+  --text-h2: 2.25rem;
+  --text-h3: 1.75rem;
+  --text-h4: 1.5rem;
+  --text-h5: 1.25rem;
+  --text-xl: 1.25rem;
+  --text-lg: 1.125rem;
+  --text-base: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-snug: 1.4;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+
+  /* Spacing - 8px system */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.12);
+  --shadow-warm: 0 4px 12px 0 rgba(211, 47, 47, 0.15);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
 }
 
 * {
@@ -17,9 +160,10 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--background);
-  color: var(--foreground);
+  font-family: var(--font-primary);
+  background: var(--background-secondary);
+  color: var(--neutral-900);
+  line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -27,7 +171,7 @@ body {
 /* Mobile-first container */
 .mobile-container {
   width: 100%;
-  max-width: 390px;
+  max-width: 480px;
   margin: 0 auto;
   min-height: 100vh;
 }
@@ -38,24 +182,25 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--neutral-100);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+  background: var(--neutral-300);
+  border-radius: var(--radius-sm);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a1;
+  background: var(--neutral-500);
 }
 
 /* Input focus styles */
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: -1px;
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 111, 0, 0.1);
 }
 
 /* Button active state */
@@ -63,13 +208,59 @@ button:active {
   transform: scale(0.98);
 }
 
-/* Gradient backgrounds */
+/* Gradient backgrounds - Warm Red-Orange */
 .gradient-primary {
-  background: linear-gradient(90deg, #FB2C36 0%, #E7000B 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-dark) 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-dark) 100%);
+}
+
+.gradient-subtle {
+  background: linear-gradient(135deg, var(--background-tertiary) 0%, var(--background-primary) 100%);
 }
 
 .gradient-light {
-  background: linear-gradient(180deg, #FEF2F2 0%, white 100%);
+  background: linear-gradient(135deg, var(--background-tertiary) 0%, var(--background-primary) 100%);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section title with underline */
+.section-title {
+  font-size: var(--text-h2);
+  font-weight: var(--font-bold);
+  color: var(--neutral-900);
+  margin-bottom: var(--space-3);
+  position: relative;
+  padding-bottom: var(--space-2);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: 2px;
+}
+
+.section-title.centered {
+  text-align: center;
+}
+
+.section-title.centered::after {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Animations */
@@ -95,8 +286,40 @@ button:active {
   }
 }
 
+@keyframes pulse-warm {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(211, 47, 47, 0);
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+.animate-pulse-warm {
+  animation: pulse-warm 2s infinite;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all var(--transition-base);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Safe area for mobile */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 .animate-slide-up {

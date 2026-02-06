@@ -26,12 +26,12 @@ export default function PsychologyResultPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24">
+    <div className="min-h-screen bg-background-secondary pb-24">
       <Header title="Kết quả trắc nghiệm" onBack={() => router.push('/psychology')} />
       
       <div className="px-4 py-6">
         {/* Result Card */}
-        <Card className="bg-gradient-to-br from-purple-500 to-purple-700 text-white">
+        <Card className="bg-gradient-to-br from-primary to-accent text-white">
           <CardContent>
             <div className="text-center py-4">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center">
@@ -47,17 +47,17 @@ export default function PsychologyResultPage() {
 
         {/* Traits */}
         <div className="mt-6">
-          <h3 className="text-lg font-bold text-gray-900 mb-3">Đặc điểm tính cách</h3>
+          <h3 className="text-lg font-bold text-neutral-900 mb-3">Đặc điểm tính cách</h3>
           <div className="space-y-3">
             {result.traits.map((trait) => (
-              <div key={trait.name} className="bg-white rounded-xl p-4 shadow-card">
+              <div key={trait.name} className="bg-background-primary rounded-xl p-4 shadow-card">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="font-medium text-gray-900">{trait.name}</span>
+                  <span className="font-medium text-neutral-900">{trait.name}</span>
                   <span className="text-sm font-medium text-primary">{trait.score}%</span>
                 </div>
-                <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-2 bg-neutral-200 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-primary rounded-full transition-all"
+                    className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all"
                     style={{ width: `${trait.score}%` }}
                   />
                 </div>
@@ -68,16 +68,16 @@ export default function PsychologyResultPage() {
 
         {/* Recommendations */}
         <div className="mt-6">
-          <h3 className="text-lg font-bold text-gray-900 mb-3">Lời khuyên cho bạn</h3>
+          <h3 className="text-lg font-bold text-neutral-900 mb-3">Lời khuyên cho bạn</h3>
           <Card>
             <CardContent>
               <ul className="space-y-3">
                 {result.recommendations.map((rec, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0 text-sm font-medium">
+                    <span className="w-6 h-6 rounded-full bg-accent-lighter text-accent flex items-center justify-center flex-shrink-0 text-sm font-medium">
                       {index + 1}
                     </span>
-                    <span className="text-sm text-gray-700">{rec}</span>
+                    <span className="text-sm text-neutral-700">{rec}</span>
                   </li>
                 ))}
               </ul>
@@ -87,7 +87,7 @@ export default function PsychologyResultPage() {
       </div>
 
       {/* Bottom CTA */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 safe-area-bottom">
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-background-primary border-t border-neutral-100 safe-area-bottom">
         <div className="mobile-container mx-auto space-y-3">
           <Button
             variant="primary"

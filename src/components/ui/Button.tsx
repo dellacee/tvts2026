@@ -21,14 +21,14 @@ export function Button({
   disabled,
   ...props
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 active:scale-[0.98]';
+  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-base active:scale-[0.98]';
   
   const variants = {
-    primary: 'bg-[#E7000B] text-white shadow-button hover:bg-[#D11629]',
-    secondary: 'bg-[#00C950] text-white hover:bg-[#00A63E]',
-    outline: 'bg-white text-[#E7000B] border border-[#E7000B] hover:bg-[#FEF2F2]',
-    ghost: 'bg-transparent text-gray-600 hover:bg-gray-100',
-    gray: 'bg-gray-300 text-white cursor-not-allowed',
+    primary: 'bg-primary text-white shadow-button hover:bg-primary-dark hover:shadow-warm hover:-translate-y-0.5',
+    secondary: 'bg-accent text-white hover:bg-accent-dark hover:shadow-warm hover:-translate-y-0.5',
+    outline: 'bg-transparent text-primary border-2 border-primary hover:bg-primary-lighter hover:border-primary-dark',
+    ghost: 'bg-transparent text-neutral-700 border border-neutral-300 hover:bg-background-secondary hover:border-accent-light hover:text-accent-dark',
+    gray: 'bg-neutral-300 text-white cursor-not-allowed',
   };
 
   const sizes = {

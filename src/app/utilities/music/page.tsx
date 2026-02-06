@@ -18,12 +18,12 @@ export default function MusicPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background-secondary">
       <Header title="Sân khấu âm nhạc" onBack={() => router.push('/dashboard')} />
       
       <div className="px-4 py-6">
         {/* Banner */}
-        <div className="h-32 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+        <div className="h-32 bg-gradient-to-r from-primary to-accent rounded-2xl flex items-center justify-center mb-6 shadow-warm">
           <div className="text-center text-white">
             <svg className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
@@ -35,30 +35,30 @@ export default function MusicPage() {
         {/* Info */}
         <Card className="mb-6">
           <CardContent>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-neutral-600">
               📍 Vị trí: Sân khấu chính, trung tâm sự kiện
             </p>
-            <p className="text-sm text-gray-600 mt-1">
+            <p className="text-sm text-neutral-600 mt-1">
               🎵 Nhiều tiết mục đặc sắc từ các nghệ sĩ
             </p>
           </CardContent>
         </Card>
 
         {/* Schedule */}
-        <h3 className="text-lg font-bold text-gray-900 mb-3">Lịch biểu diễn</h3>
+        <h3 className="text-lg font-bold text-neutral-900 mb-3">Lịch biểu diễn</h3>
         <div className="space-y-3">
           {schedule.map((item, index) => (
-            <div key={index} className="bg-white rounded-xl p-4 shadow-card">
+            <div key={index} className="bg-background-primary rounded-xl p-4 shadow-card">
               <div className="flex items-start gap-3">
                 <div className="w-16 text-center flex-shrink-0">
-                  <span className="text-xs text-purple-600 font-medium bg-purple-100 px-2 py-1 rounded-full">
+                  <span className="text-xs text-primary font-medium bg-primary-lighter px-2 py-1 rounded-full">
                     {item.time.split(' - ')[0]}
                   </span>
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-medium text-gray-900">{item.title}</h4>
-                  <p className="text-sm text-gray-500 mt-0.5">{item.artist}</p>
-                  <p className="text-xs text-gray-400 mt-1">{item.time}</p>
+                  <h4 className="font-medium text-neutral-900">{item.title}</h4>
+                  <p className="text-sm text-neutral-500 mt-0.5">{item.artist}</p>
+                  <p className="text-xs text-neutral-400 mt-1">{item.time}</p>
                 </div>
               </div>
             </div>
@@ -66,9 +66,9 @@ export default function MusicPage() {
         </div>
 
         {/* Note */}
-        <Card className="mt-6 bg-purple-50">
+        <Card className="mt-6 bg-primary-lighter">
           <CardContent>
-            <p className="text-sm text-purple-700 text-center">
+            <p className="text-sm text-primary text-center">
               🎤 Lịch trình có thể thay đổi. Vui lòng theo dõi thông báo mới nhất!
             </p>
           </CardContent>

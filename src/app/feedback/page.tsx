@@ -18,17 +18,17 @@ export default function FeedbackPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-background-secondary">
         <Header title="Góp ý chương trình" onBack={() => router.back()} />
         
         <div className="flex flex-col items-center justify-center px-4 py-20">
-          <div className="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
-            <svg className="w-10 h-10 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="w-20 h-20 rounded-full bg-success/10 flex items-center justify-center mb-4">
+            <svg className="w-10 h-10 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Cảm ơn bạn!</h2>
-          <p className="text-gray-500 text-center mb-6">
+          <h2 className="text-xl font-bold text-neutral-900 mb-2">Cảm ơn bạn!</h2>
+          <p className="text-neutral-500 text-center mb-6">
             Góp ý của bạn đã được ghi nhận và sẽ giúp chúng tôi cải thiện chương trình.
           </p>
           <Button onClick={() => router.push('/dashboard')}>
@@ -40,22 +40,22 @@ export default function FeedbackPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background-secondary">
       <Header title="Góp ý chương trình" onBack={() => router.back()} />
       
       <div className="px-4 py-6">
         {/* Rating Section */}
-        <div className="bg-white rounded-2xl p-4 shadow-sm mb-4">
-          <h3 className="font-bold text-gray-900 mb-3">Bạn đánh giá chương trình thế nào?</h3>
+        <div className="bg-background-primary rounded-2xl p-4 shadow-card mb-4">
+          <h3 className="font-bold text-neutral-900 mb-3">Bạn đánh giá chương trình thế nào?</h3>
           <div className="flex justify-center gap-2">
             {[1, 2, 3, 4, 5].map((star) => (
               <button
                 key={star}
                 onClick={() => setRating(star)}
-                className="p-1 transition-transform active:scale-90"
+                className="p-1 transition-all duration-base active:scale-90"
               >
                 <svg 
-                  className={`w-10 h-10 ${star <= rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                  className={`w-10 h-10 ${star <= rating ? 'text-accent' : 'text-neutral-300'}`}
                   fill="currentColor" 
                   viewBox="0 0 24 24"
                 >
@@ -64,7 +64,7 @@ export default function FeedbackPage() {
               </button>
             ))}
           </div>
-          <p className="text-center text-sm text-gray-500 mt-2">
+          <p className="text-center text-sm text-neutral-500 mt-2">
             {rating === 0 && 'Chạm để đánh giá'}
             {rating === 1 && 'Rất tệ'}
             {rating === 2 && 'Tệ'}
@@ -75,19 +75,19 @@ export default function FeedbackPage() {
         </div>
 
         {/* Feedback Section */}
-        <div className="bg-white rounded-2xl p-4 shadow-sm mb-4">
-          <h3 className="font-bold text-gray-900 mb-3">Góp ý của bạn</h3>
+        <div className="bg-background-primary rounded-2xl p-4 shadow-card mb-4">
+          <h3 className="font-bold text-neutral-900 mb-3">Góp ý của bạn</h3>
           <textarea
             value={feedback}
             onChange={(e) => setFeedback(e.target.value)}
             placeholder="Chia sẻ ý kiến của bạn về chương trình..."
-            className="w-full h-32 p-3 border border-gray-200 rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+            className="w-full h-32 p-3 border border-neutral-200 rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all duration-base"
           />
         </div>
 
         {/* Quick Feedback Options */}
-        <div className="bg-white rounded-2xl p-4 shadow-sm mb-6">
-          <h3 className="font-bold text-gray-900 mb-3">Hoặc chọn nhanh</h3>
+        <div className="bg-background-primary rounded-2xl p-4 shadow-card mb-6">
+          <h3 className="font-bold text-neutral-900 mb-3">Hoặc chọn nhanh</h3>
           <div className="flex flex-wrap gap-2">
             {[
               'Tổ chức tốt',
@@ -100,7 +100,7 @@ export default function FeedbackPage() {
               <button
                 key={option}
                 onClick={() => setFeedback((prev) => prev ? `${prev}, ${option}` : option)}
-                className="px-3 py-1.5 bg-gray-100 rounded-full text-sm text-gray-700 active:bg-gray-200"
+                className="px-3 py-1.5 bg-accent-lighter rounded-full text-sm text-neutral-700 active:bg-accent-light transition-all duration-base"
               >
                 {option}
               </button>

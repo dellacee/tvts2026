@@ -17,12 +17,12 @@ export default function FoodPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background-secondary">
       <Header title="Khu ẩm thực" onBack={() => router.push('/dashboard')} />
       
       <div className="px-4 py-6">
         {/* Banner */}
-        <div className="h-32 bg-gradient-to-r from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6">
+        <div className="h-32 bg-gradient-to-r from-accent to-primary rounded-2xl flex items-center justify-center mb-6 shadow-warm">
           <div className="text-center text-white">
             <svg className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -34,17 +34,17 @@ export default function FoodPage() {
         {/* Info */}
         <Card className="mb-6">
           <CardContent>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-neutral-600">
               📍 Vị trí: Khu vực phía Đông sân trường
             </p>
-            <p className="text-sm text-gray-600 mt-1">
+            <p className="text-sm text-neutral-600 mt-1">
               🕐 Giờ hoạt động: 8:00 - 17:00
             </p>
           </CardContent>
         </Card>
 
         {/* Food stalls */}
-        <h3 className="text-lg font-bold text-gray-900 mb-3">Các gian hàng</h3>
+        <h3 className="text-lg font-bold text-neutral-900 mb-3">Các gian hàng</h3>
         <div className="space-y-3">
           {foodStalls.map((stall) => (
             <InfoCard
@@ -52,11 +52,11 @@ export default function FoodPage() {
               title={stall.name}
               description={`${stall.description} • ${stall.location}`}
               icon={
-                <svg className="w-5 h-5 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               }
-              iconBgColor="bg-orange-100"
+              iconBgColor="bg-accent-lighter"
             />
           ))}
         </div>

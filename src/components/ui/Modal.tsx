@@ -16,14 +16,14 @@ export function Modal({ isOpen, onClose, children, className = '' }: ModalProps)
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/50"
+        className="absolute inset-0 bg-neutral-900/50"
         onClick={onClose}
       />
       {/* Modal content */}
       <div
         className={`
           relative z-10 w-[342px] max-w-[90vw] mx-4
-          bg-white rounded-2xl shadow-modal
+          bg-background-primary rounded-2xl shadow-modal
           animate-fade-in
           ${className}
         `}

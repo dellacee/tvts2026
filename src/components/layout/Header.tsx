@@ -26,8 +26,8 @@ export function Header({ title, showBack = true, onBack, rightAction, showLogo =
   };
 
   return (
-    <header className={`sticky top-0 z-50 bg-[#E7000B] ${className}`}>
-      {/* Full width red background */}
+    <header className={`sticky top-0 z-50 bg-gradient-to-r from-primary to-accent-dark ${className}`}>
+      {/* Full width gradient background */}
       <div className="w-full px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Left side: Back button + Title */}
@@ -35,7 +35,7 @@ export function Header({ title, showBack = true, onBack, rightAction, showLogo =
             {showBack && (
               <button
                 onClick={handleBack}
-                className="p-1 -ml-1 text-white hover:bg-white/10 rounded-lg transition-colors"
+                className="p-1 -ml-1 text-white hover:bg-white/10 rounded-lg transition-colors duration-base"
                 aria-label="Quay lại"
               >
                 <svg
@@ -55,7 +55,7 @@ export function Header({ title, showBack = true, onBack, rightAction, showLogo =
                 </svg>
               </button>
             )}
-            <h1 className="text-white font-bold text-lg tracking-wide">
+            <h1 className="text-white font-bold text-lg tracking-wide font-heading">
               {title}
             </h1>
           </div>
@@ -89,7 +89,7 @@ export function HomeHeader({ user }: HomeHeaderProps) {
   const router = useRouter();
   
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 bg-background-primary shadow-sm border-b border-neutral-100">
       <div className="w-full px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -102,13 +102,13 @@ export function HomeHeader({ user }: HomeHeaderProps) {
               className="object-contain"
             />
             <div className="flex flex-col">
-              <span className="text-[#E7000B] text-[10px] font-medium leading-tight">TƯ VẤN TUYỂN SINH QUẢNG TRỊ</span>
-              <span className="text-[#E7000B] font-bold text-sm italic leading-tight">CHUYẾN BAY ĐẦU TIÊN</span>
+              <span className="text-primary text-[10px] font-medium leading-tight">TƯ VẤN TUYỂN SINH QUẢNG TRỊ</span>
+              <span className="text-primary font-bold text-sm italic leading-tight font-heading">CHUYẾN BAY ĐẦU TIÊN</span>
             </div>
           </div>
           {/* User icon */}
           <button 
-            className="p-2 text-[#E7000B] hover:bg-red-50 rounded-full transition-colors" 
+            className="p-2 text-primary hover:bg-primary-lighter rounded-full transition-colors duration-base" 
             aria-label="Tài khoản"
             onClick={() => router.push('/profile')}
           >
