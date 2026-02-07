@@ -172,33 +172,9 @@ export default function MajorPage() {
             </select>
           </div>
 
-          {/* Popular majors - in bordered card */}
-          <div className="border border-neutral-200 rounded-2xl p-4 mb-4 bg-background-primary">
-            <label className="flex items-center gap-2 text-sm text-neutral-600 mb-3">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-              </svg>
-              Ngành phổ biến
-            </label>
-            <div className="grid grid-cols-2 gap-2">
-              {popularMajors.map((major) => (
-                <button
-                  key={major}
-                  onClick={() => handleQuickSelect(major)}
-                  className={`px-3 py-2.5 text-sm rounded-xl border transition-all duration-base ${
-                    customMajor === major
-                      ? 'border-primary bg-primary-lighter text-primary font-medium'
-                      : 'border-neutral-200 bg-background-primary text-neutral-700 hover:border-neutral-300'
-                  }`}
-                >
-                  {major}
-                </button>
-              ))}
-            </div>
-          </div>
 
           {/* Divider */}
-          <div className="flex items-center gap-4 my-6">
+          <div className="flex items-center gap-4 my-6">+
             <div className="flex-1 h-px bg-neutral-200" />
             <span className="text-sm text-neutral-400">Hoặc</span>
             <div className="flex-1 h-px bg-neutral-200" />
