@@ -1,24 +1,41 @@
 'use client';
 
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/contexts/AppContext';
+import { checkInService } from '@/services/api';
 import Image from 'next/image';
 
 export default function DashboardPage() {
   const router = useRouter();
   const { state } = useApp();
   const { user, progress } = state;
+  const [luckyNumber, setLuckyNumber] = useState<string | null>(null);
 
-  // Generate lucky number based on user or random
-  const luckyNumber = useMemo(() => {
-    if (user?.id) {
-      // Generate consistent number from user id
-      const hash = user.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-      return String(hash % 10000).padStart(4, '0');
+  // Fetch lucky number from API
+  useEffect(() => {
+    const fetchLuckyNumber = async () => {
+      try {
+        const response = await checkInService.getCurrentUserCheckIn();
+        if (response.success && response.data?.order != null) {
+          setLuckyNumber(String(response.data.order).padStart(4, '0'));
+        }
+      } catch (error) {
+        console.error('Failed to fetch lucky number:', error);
+        // Fallback: generate from user id if available
+        if (user?.luckyNumber) {
+          setLuckyNumber(user.luckyNumber);
+        } else if (user?.id) {
+          const hash = user.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+          setLuckyNumber(String(hash % 10000).padStart(4, '0'));
+        }
+      }
+    };
+
+    if (state.isAuthenticated) {
+      fetchLuckyNumber();
     }
-    return String(Math.floor(Math.random() * 10000)).padStart(4, '0');
-  }, [user?.id]);
+  }, [state.isAuthenticated, user?.id, user?.luckyNumber]);
 
   // Calculate completed tasks
   const completedTasks = [
@@ -182,7 +199,9 @@ export default function DashboardPage() {
             <div className="flex justify-between items-start relative z-10">
               <div className="flex-1">
                 <p className="text-xs opacity-90">STT May mắn của bạn</p>
-                <p className="text-3xl font-extrabold mt-1 font-number">#{luckyNumber}</p>
+                <p className="text-3xl font-extrabold mt-1 font-number">
+                  {luckyNumber ? `#${luckyNumber}` : '...'}
+                </p>
                 <p className="text-xs mt-2 opacity-80 max-w-[160px]">
                   Lưu số này để tham gia bốc thăm trúng thưởng!
                 </p>

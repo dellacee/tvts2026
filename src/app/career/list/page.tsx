@@ -6,15 +6,22 @@ import { Header } from '@/components/layout/Header';
 
 // Danh sách lĩnh vực
 const fields = [
-  { value: 'cntt', label: 'Công nghệ thông tin' },
+  { value: 'nong-nghiep-thuc-pham-tai-nguyen', label: 'Nông nghiệp, Thực phẩm & Tài nguyên thiên nhiên' },
+  { value: 'kien-truc-xay-dung', label: 'Kiến trúc & Xây dựng' },
+  { value: 'truyen-thong-nghe-thuat', label: 'Truyền thông & Nghệ thuật' },
+  { value: 'quan-ly-hanh-chinh-dieu-hanh', label: 'Quản lý hành chính và điều hành doanh nghiệp' },
+  { value: 'giao-duc-dao-tao', label: 'Giáo dục & Đào tạo' },
+  { value: 'tai-chinh', label: 'Tài chính' },
+  { value: 'dich-vu-cong-hanh-chinh', label: 'Dịch vụ Công & Hành chính' },
   { value: 'y-te', label: 'Y tế' },
-  { value: 'xay-dung', label: 'Xây dựng' },
-  { value: 'phap-luat', label: 'Pháp luật' },
-  { value: 'kinh-doanh', label: 'Kinh doanh' },
-  { value: 'giao-duc', label: 'Giáo dục' },
-  { value: 'truyen-thong', label: 'Truyền thông' },
-  { value: 'ky-thuat', label: 'Kỹ thuật' },
-  { value: 'nghe-thuat', label: 'Nghệ thuật' },
+  { value: 'khach-san-du-lich', label: 'Khách sạn & Du lịch' },
+  { value: 'dich-vu-xa-hoi', label: 'Dịch vụ xã hội' },
+  { value: 'cong-nghe-thong-tin', label: 'Công nghệ Thông tin' },
+  { value: 'luat-an-ninh-cong-cong', label: 'Luật & An ninh công cộng' },
+  { value: 'san-xuat', label: 'Sản xuất' },
+  { value: 'tiep-thi', label: 'Tiếp thị' },
+  { value: 'khoa-hoc-cong-nghe-ky-thuat-toan', label: 'Khoa học, Công nghệ, Kỹ thuật & Toán học' },
+  { value: 'logistics-van-tai', label: 'Logistics & Vận tải' },
 ];
 
 export default function CareerListPage() {
